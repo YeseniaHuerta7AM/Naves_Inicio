@@ -3,7 +3,7 @@
 #include "Game.h"
 
 CGame::CGame(){
-	estado;
+	estado;//ACT2: Mal <-- Es necesario que des el valor inicial del estado del juego, ya que este nunca es asignado.
 }
 
 // Con esta función eliminaremos todos los elementos en pantalla
