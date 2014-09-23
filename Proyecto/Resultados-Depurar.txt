@@ -3,5 +3,5 @@
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\kernel32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\KernelBase.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\msvcr120d.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
-El subproceso 0x330 terminó con código -1073741510 (0xc000013a).
-El programa '[5256] Game.exe' terminó con código -1073741510 (0xc000013a).
+El subproceso 0x3dc terminó con código -1073741510 (0xc000013a).
+El programa '[2468] Game.exe' terminó con código -1073741510 (0xc000013a).
