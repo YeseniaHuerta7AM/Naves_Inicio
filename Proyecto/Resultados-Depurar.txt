@@ -20,5 +20,13 @@
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\bcryptprimitives.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\imm32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\msctf.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
-El subproceso 0x16e0 terminó con código -1073741510 (0xc000013a).
-El programa '[2876] Game.exe' terminó con código -1073741510 (0xc000013a).
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\uxtheme.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\dwmapi.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\KBDUS.DLL' cargado. No se encuentra el archivo PDB o no se puede abrir.
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\KBDUS.DLL' descargado
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\KBDLA.DLL' cargado. No se encuentra el archivo PDB o no se puede abrir.
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\KBDLA.DLL' descargado
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\ole32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\combase.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
+El subproceso 0x1490 terminó con código -1073741510 (0xc000013a).
+El programa '[6060] Game.exe' terminó con código -1073741510 (0xc000013a).
