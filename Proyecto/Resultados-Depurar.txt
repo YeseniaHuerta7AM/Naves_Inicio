@@ -3,7 +3,6 @@
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\kernel32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\KernelBase.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Users\Yesenia Huerta\Documents\GitHub\Naves_Inicio\Ejecutable\SDL.dll' cargado. El módulo se compiló sin símbolos.
-'Game.exe' (Win32): 'C:\Users\Yesenia Huerta\Documents\GitHub\Naves_Inicio\Ejecutable\SDL_image.dll' cargado. El módulo se compiló sin símbolos.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\msvcr120d.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\advapi32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\gdi32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
@@ -28,5 +27,6 @@
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\KBDLA.DLL' descargado
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\ole32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\combase.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
-El subproceso 0x1490 terminó con código -1073741510 (0xc000013a).
-El programa '[6060] Game.exe' terminó con código -1073741510 (0xc000013a).
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\clbcatq.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\oleaut32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
+El programa '[2716] Game.exe' terminó con código 0 (0x0).
