@@ -35,7 +35,11 @@ void CGame::Iniciando()
 	}
 
 	SDL_WM_SetCaption("Mi primer Juego", NULL);
-	nave = new Nave(screen, "../Data/MiNave.bmp");
+
+
+	nave = new Nave(screen, "../Data/MiNave.bmp", (WIDTH_SCREEN / 2)/* - (sprite->WidthModule(0) / 2)*/, (HEIGHT_SCREEN - 80)/* - (sprite->HeightModule(0))*/);
+	enemigo = new Nave(screen, "../Data/enemigo.bmp", 0, 0);
+	enemigo->SetAutoMovimiento(true);
 
 }
 bool CGame::Start()
@@ -48,6 +52,7 @@ bool CGame::Start()
 		//Maquina de estados
 		switch(estado){
 		case Estado::ESTADO_INICIANDO:
+			printf("\n1. ESTADO_INICIANDO");
 			Iniciando();
 			//{
 				//nave = IMG_LoadJPG_RW(SDL_RWFromFile("../Data/cuadro.jpg", "rb"));
@@ -65,11 +70,14 @@ bool CGame::Start()
 
 				//SDL_BlitSurface(nave, &fuente, screen, &destino);
 			//}
+
 			estado = ESTADO_MENU;
 			break;
 		case Estado::ESTADO_MENU:
 			//nave->PintarModulo(0, 0, 0, 64, 64);//Pintando
 			//nave->PintarModulo(0, 100, 100);
+
+			enemigo->Actualizar();
 
 			SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 0, 0, 0));
 
@@ -77,20 +85,23 @@ bool CGame::Start()
 			if (keys[SDLK_RIGHT])
 			{
 				nave->Mover(1);
+				printf("\n2. ESTADO_MENU");
 			}
 
 			if (keys[SDLK_LEFT])
 			{
 				nave->Mover(-1);
+				printf("\n2. ESTADO_MENU");
 			}
 
 			nave->Pintar();
+			enemigo->Pintar();
 			//Los 3 casos siguientes son el primero aplicado a las demás direcciones
 
 			break;
-		case Estado::ESTADO_JUGANDO:	
+		case Estado::ESTADO_JUGANDO:
 			break;
-		case Estado::ESTADO_TERMINANDO: 
+		case Estado::ESTADO_TERMINANDO:
 				salirJuego = true;
 				break;
 		case Estado::ESTADO_FINALIZANDO:
@@ -99,7 +110,7 @@ bool CGame::Start()
 
 		while (SDL_PollEvent(&event))//Aquí SDL creará una lista de eventos ocurridos
 		{
-			if (event.type == SDL_QUIT) {salirJuego = true;}//Si se detecta una salida de SDL o...
+			if (event.type == SDL_QUIT) { printf("\n5. ESTADO_FINALIZANDO"); salirJuego = true;}//Si se detecta una salida de SDL o...
 
 			if (event.type == SDL_KEYDOWN){}
 		}

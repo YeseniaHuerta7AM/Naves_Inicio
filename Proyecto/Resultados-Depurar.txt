@@ -29,4 +29,4 @@
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\combase.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\clbcatq.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\oleaut32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
-El programa '[2716] Game.exe' terminó con código 0 (0x0).
+El programa '[6692] Game.exe' terminó con código 0 (0x0).
