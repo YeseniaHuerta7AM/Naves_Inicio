@@ -13,7 +13,7 @@ public:
 		int h;
 	};
 
-	Modulos modulos [1]; //1 indica el número de módulos que debemos tener definidos en nuestro archivo .cpp
+	Modulos modulos [8]; //Indica el número de módulos que debemos tener definidos en nuestro archivo .cpp
 	SpriteDef();
 };
 

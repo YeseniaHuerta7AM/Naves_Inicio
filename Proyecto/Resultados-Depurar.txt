@@ -20,13 +20,13 @@
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\imm32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\msctf.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\uxtheme.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\combase.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\dwmapi.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\KBDUS.DLL' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\KBDUS.DLL' descargado
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\KBDLA.DLL' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\KBDLA.DLL' descargado
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\ole32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
-'Game.exe' (Win32): 'C:\Windows\SysWOW64\combase.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
+'Game.exe' (Win32): 'C:\Windows\SysWOW64\kernel.appcore.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
 'Game.exe' (Win32): 'C:\Windows\SysWOW64\clbcatq.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
-'Game.exe' (Win32): 'C:\Windows\SysWOW64\oleaut32.dll' cargado. No se encuentra el archivo PDB o no se puede abrir.
-El programa '[6692] Game.exe' terminó con código 0 (0x0).
+El programa '[6808] Game.exe' terminó con código 0 (0x0).

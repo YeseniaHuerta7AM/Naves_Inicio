@@ -20,6 +20,7 @@ Sprite::~Sprite()
 void Sprite::CargarImagen(char * path)
 {
 	imagen = SDL_LoadBMP(path);//Agregamos la imagen a nuestra variable
+	SDL_SetColorKey(imagen, SDL_SRCCOLORKEY, SDL_MapRGB(imagen->format, 255, 0, 255));
 }
 
 /*void Sprite::PintarModulo(int nombre, int x, int y, int w, int h)
@@ -43,7 +44,7 @@ void Sprite::PintarModulo(int nombre, int x, int y)
 	dest.x = x;
 	dest.y = y;
 
-	SDL_BlitSurface(imagen, &src, screen, &dest);
+	SDL_BlitSurface(imagen, &src, screen, &dest); //SDL_BlitSurface copia una imagen a otra, y puede copiar areas determinadas
 }
 
 int Sprite::WidthModule(int module)
