@@ -45,7 +45,7 @@ void CGame::Iniciando()
 
 	nave = new Nave(screen, "../Data/MiNave.bmp", (WIDTH_SCREEN / 2), (HEIGHT_SCREEN - 80), MODULO_MINAVE_NAVE);
 	menu = new Nave(screen, "../Data/Fondo.bmp", 0, 0, MODULO_MENU_FONDO);
-	textos = new Nave(screen, "../Data/Textos.bmp", 0, 0, -1);
+	textos = new Nave(screen, "../Data/Texto.bmp", 0, 0, -1);
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -80,7 +80,7 @@ bool CGame::Start()
 			//textos->Pintar(MODULO_TEXTOS_MENU_OPCION1_SELECCIONADO, 380, 190);
 			//textos->Pintar(MODULO_TEXTOS_MENU_OPCION2_SELECCIONADO, 393, 230);
 			Menu();
-			estado = ESTADO_JUGANDO;
+			//estado = ESTADO_JUGANDO;
 			break;
 
 		case Estado::ESTADO_JUGANDO:

@@ -23,32 +23,32 @@ SpriteDef::SpriteDef()//Creamos una clase aparte por sí queremos cambiarle algo 
 	modulos[2].h = 61;
 
 	modulos[3].id = MODULO_TEXTOS_TITULO;
-	modulos[3].x = 117;
-	modulos[3].y = 16;
-	modulos[3].w = 78;
+	modulos[3].x = 119; 
+	modulos[3].y = 20; 
+	modulos[3].w = 76; 
 	modulos[3].h = 34;
 
 	modulos[4].id = MODULO_TEXTOS_MENU_OPCION1;
-	modulos[4].x = 107;
-	modulos[4].y = 50;
-	modulos[4].w = 100;
-	modulos[4].h = 36;
+	modulos[4].x = 108; 
+	modulos[4].y = 54; 
+	modulos[4].w = 97; 
+	modulos[4].h = 34; 
 
 	modulos[5].id = MODULO_TEXTOS_MENU_OPCION2;
-	modulos[5].x = 120;
-	modulos[5].y = 85;
-	modulos[5].w = 76;
-	modulos[5].h = 34;
+	modulos[5].x = 122; 
+	modulos[5].y = 88; 
+	modulos[5].w = 69; 
+	modulos[5].h = 32; 
 
 	modulos[6].id = MODULO_TEXTOS_MENU_OPCION1_SELECCIONADO;
 	modulos[6].x = 206;
-	modulos[6].y = 50;
-	modulos[6].w = 100;
-	modulos[6].h = 35;
+	modulos[6].y = 53; 
+	modulos[6].w = 99; 
+	modulos[6].h = 33; 
 
 	modulos[7].id = MODULO_TEXTOS_MENU_OPCION2_SELECCIONADO;
-	modulos[7].x = 219;
-	modulos[7].y = 83;
-	modulos[7].w = 75;
+	modulos[7].x = 218; 
+	modulos[7].y = 86; 
+	modulos[7].w = 74; 
 	modulos[7].h = 36;
 }
