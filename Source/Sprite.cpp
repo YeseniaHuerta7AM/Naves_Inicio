@@ -1,5 +1,3 @@
-
-
 #include "Sprite.h"
 #include <SDL.h>
 

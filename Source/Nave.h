@@ -1,36 +1,36 @@
 #ifndef __NAVE_H__
 #define __NAVE_H__
-#include "Sprite.h"
+#include "Objeto.h"
+#include "Config.h"
 
 class Nave
 {
-	Sprite * sprite; //"sprite" contiene la imagen 
-	//Las coordenadas (sin w, h, porque ya está definido en el sprite)
-	int x;
-	int y;
-	int w;
-	int h;
-	bool autoMovimiento;//Para que el enemigo tenga su propio movimiento
-	int pasoActual; //
-	int pasoLimite;
-	int module; //Modulo actual
+	Objeto * nave;
+	Objeto * bala[MAXIMO_DE_BALAS];
+	Objeto * balaNueva[MAXIMO_DE_BALAS];//*
+	int balasVisibles;
+	bool visible;
+	bool colision; //Ésta variable la pondremos en true cuando simulemos una colisión
 
 public:
-	void MoverX(int posicion);
-	void MoverY(int posicion);
-	Nave(SDL_Surface * screen, char * rutaImagen, int x, int y, int module); //Constructor
-	void SetAutoMovimiento(bool autoMovimiento);
-	void SetPasoLimite(int pasos);
-	int ObtenerPasoActual(); //Para saber en qué paso nos encotramos
-	void IncrementarPasoActual();
-	void Pintar();
-	void Pintar(int module, int x, int y);
-	void Actualizar();
-	int ObtenerX();
-	int ObtenerY();
-	int ObtenerW();
-	int ObtenerH();
-	bool EstaColisionando(Nave * b);
+	Nave(SDL_Surface * screen, char * rutaImagen, int x, int y, int module);
+	void Pintar(int tipoNave);
+	void Disparar(int tipoNave, int balas);
+	void AutoDisparar(int balas);
+	
+	void MoverIzquierda(int velocidad);
+	void MoverDerecha(int velocidad);
+	void MoverArriba(int velocidad);
+	void MoverAbajo(int velocidad);
+
+	void setVisible(bool visible);
+	bool estaColisionandoConBala(Nave * nave);
+	void simularColision(bool colision);
+	void CrearNuevo();
+
+
+	Objeto * GetNaveObjeto(); //Objeto tener Nave objeto
 };
 
 #endif
+

@@ -1,5 +1,8 @@
+#pragma once
 #include <SDL_image.h>
+#include "Objeto.h"
 #include "Nave.h"
+#include "Stage.h"
 class CGame
 {
 public:
@@ -7,6 +10,7 @@ public:
 	{
 		ESTADO_INICIANDO,
 		ESTADO_MENU,
+		ESTADO_PRE_JUGANDO,
 		ESTADO_JUGANDO,
 		ESTADO_TERMINANDO,
 		ESTADO_FINALIZANDO
@@ -22,7 +26,7 @@ private:
 	void Iniciando();
 	void Menu();
 	void MoverEnemigo();
-	bool EsLimitePantalla(Nave * objeto, int bandera); //Límite de pantalla, utilizamos un puntero
+	bool EsLimitePantalla(Objeto * objeto, int bandera); //Límite de pantalla, utilizamos un puntero
 	//La bandera me va a recibir un numero entero, pero lo va a trabajar como binario
 	int opcionSeleccionada;
 	Uint8 * keys;//Esta variable nos servriá para ver si determinadas teclas están o no pulsadas
@@ -30,14 +34,19 @@ private:
 
 	SDL_Surface * screen;
 	Nave * nave;
-	Nave * enemigoArreglo [10];
-
-	Nave * menu; //Fondo del menú
-	Nave * textos; //Textos del juego
-	Nave * fondo; //Fondo del juego
+	Nave * enemigoArreglo[10];
+	Stage nivel[4]; //Es un arreglo de 4 (escenarios)
+	void InicializandoStage();
+	int NivelActual;
+	Objeto * menu; //Fondo del menú
+	Objeto * textos; //Textos del juego
+	Objeto * fondo; //Fondo del juego
 
 	int tick;
 	int tiempoFrameInicial;
 	int tiempoFrameFinal;
 	Estado estado;
+
+	int vida;
+	int enemigosEliminados;
 };

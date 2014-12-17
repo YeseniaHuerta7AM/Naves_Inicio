@@ -1,115 +1,128 @@
 #include "Nave.h"
-//#include "config.h"
+#include "Config.h"
 
-//Vamos a pasarle un arreglo de caracteres por la ruta de la imagen
-Nave::Nave(SDL_Surface * screen, char * rutaImagen, int x, int y, int module)
+Nave::Nave(SDL_Surface * screen, char * rutaImagen, int x, int y, int module) //Game pasa sus parametros a nave
 {
-	this->module = module;
-	//"Sprite" es el tipo de dato. "sprite" es el nombre
-	sprite = new Sprite(screen);//Le pasamos la pantalla que se va a ir al Sprite como una copia para poder dibujar la nave
-	sprite->CargarImagen(rutaImagen);
-
-	w = sprite->WidthModule(this->module);
-	h = sprite->HeightModule(this->module);
-
-	this->x = x;
-	this->y = y;
-	autoMovimiento = false; //Toda nave que construyamos no va a tener automovimiento
-
-	pasoActual = 0;
-	pasoLimite = -1;
-}
-
-void Nave::SetAutoMovimiento(bool autoMovimiento)
-{
-	this->autoMovimiento = autoMovimiento;//Clase
-}
-
-void Nave::Actualizar()
-{
-	if (autoMovimiento)
+	nave = new Objeto(screen, rutaImagen, x, y, module); //Nave pasa sus parametros a Objeto nave
+	for (int i = 0; i < MAXIMO_DE_BALAS; i++)
 	{
-		MoverX(1);
+		bala[i] = new Objeto(screen, "../Data/balas.bmp", 0, 0, MODULO_BALAS_BALA);
+		bala[i]->SetVisible(false); //La bala va a ser no visible
 	}
 
-	if (pasoLimite > 0)
+	for (int i = 0; i < MAXIMO_DE_BALAS; i++) //*
 	{
-		//pasoActual++; //Cada momento vamos a estar incrementando el pasoActual
-		if (pasoActual >= pasoLimite)
-			pasoActual = 0; //Cuando sea mayor, vamos a reiniciarlo a 0
+		balaNueva[i] = new Objeto(screen, "../Data/balanueva.bmp", 0, 0, MODULO_BALAS_BALA);
+		balaNueva[i]->SetVisible(false); //La bala va a ser no visible
 	}
 
-	/////
-	if (autoMovimiento)
+	balasVisibles = 0;
+	visible = true;
+	colision = false;
+}
+
+void Nave::CrearNuevo()
+{
+	balasVisibles = 0;
+	visible = true;
+	colision = false;
+
+	for (int i = 0; i < MAXIMO_DE_BALAS; i++)
 	{
-		MoverY(1);
+		bala[i]->SetVisible(false);
 	}
+	nave->PonerEn(0, 0); //Mover X y Y
+}
 
-	if (pasoLimite > 0)
+void Nave::Pintar(int tipoNave)
+{
+	if (visible)
 	{
-		//pasoActual++; //Cada momento vamos a estar incrementando el pasoActual
-		if (pasoActual >= pasoLimite)
-			pasoActual = 0; //Cuando sea mayor, vamos a reiniciarlo a 0
+		nave->Pintar();
+		for (int i = 0; i < MAXIMO_DE_BALAS; i++)
+		{
+			bala[i]->Pintar();
+			balaNueva[i]->Pintar();
+			//bala[i]->MoverX(2);
+			switch (tipoNave)
+			{
+			case NAVE_PROPIA:
+				balaNueva[i]->MoverY(-10); //Código para mover arriba
+				break;
+			case NAVE_ENEMIGO:
+				bala[i]->MoverY(10); //Código para mover abajo
+				break;
+			}
+		}
 	}
-	/////
 }
 
-void Nave::Pintar()
+void Nave::Disparar(int tipoNave, int balas)
 {
-	sprite->PintarModulo(module, x, y);
+	if (visible) //Solamente va a disparar cuando esté visible
+	{
+		balaNueva[balasVisibles]->SetVisible(true);
+		bala[balasVisibles]->SetVisible(true);
+		switch (tipoNave)
+		{
+		case NAVE_PROPIA:
+			balaNueva[balasVisibles]->PonerEn(nave->ObtenerX() + nave->ObtenerW() / 2, nave->ObtenerY());
+			break;
+		case NAVE_ENEMIGO:
+			bala[balasVisibles]->PonerEn(nave->ObtenerX() + nave->ObtenerW() / 2, nave->ObtenerY() + nave->ObtenerH());
+			break;
+		}
+
+		balasVisibles++;
+		if (balasVisibles >= balas)
+			balasVisibles = 0;
+	}
 }
 
-void Nave::Pintar(int module, int x, int y)
+void Nave::MoverIzquierda(int velocidad)
 {
-	sprite->PintarModulo(module, x, y);
+	nave->MoverX(-velocidad);
 }
 
-void Nave::MoverX(int posicion)
+void Nave::MoverDerecha(int velocidad)
 {
-	x += posicion;
+	nave->MoverX(velocidad);
 }
 
-void Nave::MoverY(int posicion)
+void Nave::MoverArriba(int velocidad)
 {
-	y += posicion;
+	nave->MoverY(-velocidad);
 }
 
-int Nave::ObtenerX()
+void Nave::MoverAbajo(int velocidad)
 {
-	return x;
+	nave->MoverY(velocidad);
 }
 
-int Nave::ObtenerY()
+Objeto * Nave::GetNaveObjeto()
 {
-	return y;
+	return nave; //Return nave porque nave es el tipo objeto y con el que quiero hacer la comparación
 }
 
-int Nave::ObtenerW()
+void Nave::AutoDisparar(int balas)
 {
-	return w;
+	if ((rand() % 100)<1)
+		Disparar(NAVE_ENEMIGO, balas);
+
 }
 
-int Nave::ObtenerH()
+void Nave::setVisible(bool visible)
 {
-	return h;
+	this->visible = visible;
 }
 
-void Nave::SetPasoLimite(int pasos)
+bool Nave::estaColisionandoConBala(Nave * nave) //En éste método vamos a implementar las colisiones
 {
-	this->pasoLimite = pasos;
+
+	return colision;
 }
 
-int Nave::ObtenerPasoActual()
+void Nave::simularColision(bool colision)
 {
-	return pasoActual;
-}
-
-void Nave::IncrementarPasoActual()
-{
-	pasoActual++;
-}
-
-bool Nave::EstaColisionando(Nave * b)
-{
-	return false;
+	this->colision = colision;
 }

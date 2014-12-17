@@ -51,4 +51,10 @@ SpriteDef::SpriteDef()//Creamos una clase aparte por sí queremos cambiarle algo 
 	modulos[7].y = 86; 
 	modulos[7].w = 74; 
 	modulos[7].h = 36;
+
+	modulos[8].id = MODULO_BALAS_BALA;
+	modulos[8].x = 0;
+	modulos[8].y = 0;
+	modulos[8].w = 5;
+	modulos[8].h = 5;
 }
